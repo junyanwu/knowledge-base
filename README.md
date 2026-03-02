@@ -27,8 +27,20 @@ knowledge-base/
 │   ├── feishu/               # 飞书集成
 │   ├── messaging/            # 消息渠道
 │   └── api/                  # API 设计
-└── 04-session-logs/          # 会话日志
-    └── YYYY-MM/              # 按月归档
+├── finance/                  # 金融知识
+│   ├── 金融市场基础.md
+│   ├── 技术分析详解.md
+│   ├── 宏观经济分析框架.md
+│   ├── 行业研究方法论.md
+│   └── 欧洲央行政策追踪.md
+├── world-affairs/            # 世界局势
+│   ├── 世界局势分析框架.md
+│   ├── 2026年全球热点.md
+│   └── 温铁军著作研读计划.md
+└── quantitative/             # 量化投资
+    ├── 量化投资基础.md
+    ├── Python量化编程.md
+    └── 风险管理模型.md
 ```
 
 ---
@@ -70,6 +82,23 @@ knowledge-base/
 - [飞书机器人集成](04-integrations/feishu/bot-setup.md)
 - [WebSocket 消息处理](04-integrations/feishu/websocket.md)
 
+### 金融知识
+- [金融市场基础](finance/金融市场基础.md)
+- [技术分析详解](finance/技术分析详解.md)
+- [宏观经济分析框架](finance/宏观经济分析框架.md)
+- [行业研究方法论](finance/行业研究方法论.md)
+- [欧洲央行政策追踪](finance/欧洲央行政策追踪.md) ✨ 新增
+
+### 世界局势
+- [世界局势分析框架](world-affairs/世界局势分析框架.md)
+- [2026年全球热点](world-affairs/2026年全球热点.md)
+- [温铁军著作研读计划](world-affairs/温铁军著作研读计划.md)
+
+### 量化投资
+- [量化投资基础](quantitative/量化投资基础.md)
+- [Python量化编程](quantitative/Python量化编程.md)
+- [风险管理模型](quantitative/风险管理模型.md)
+
 ---
 
 ## 🔄 知识迁移
@@ -94,10 +123,31 @@ git clone https://github.com/junyanwu/knowledge-base.git
 
 | 分类 | 文档数 | 最后更新 |
 |------|--------|----------|
-| 量化金融 | 0 | - |
-| AI 工具 | 0 | - |
-| 开发技术 | 0 | - |
-| 集成开发 | 0 | - |
+| 量化金融 | 7 | 2026-02-22 |
+| AI 工具 | 4 | 2026-02-22 |
+| 开发技术 | 2 | 2026-02-22 |
+| 集成开发 | 3 | 2026-02-22 |
+| 金融知识 | 5 | 2026-03-02 |
+| 世界局势 | 3 | 2026-03-02 |
+| 量化投资 | 3 | 2026-03-02 |
+
+---
+
+## 📋 待学习内容
+
+### 高优先级
+- [ ] 温铁军著作研读（八次危机、去依附等）
+- [ ] 金融衍生品知识
+- [ ] 高频交易策略
+
+### 中优先级
+- [ ] 区域经济专题
+- [ ] 地缘政治深度分析
+- [ ] 机器学习在量化中的应用
+
+### 低优先级
+- [ ] 行业专题研究
+- [ ] 历史经济案例分析
 
 ---
 
@@ -137,6 +187,20 @@ source: 来源链接 (可选)
 
 ---
 
+## 🔗 外部资源
+
+- [VeighNa 官方文档](https://www.vnpy.com/docs/cn/index.html)
+- [AkShare 文档](https://akshare.akfamily.xyz/)
+- [OpenClaw 文档](https://docs.openclaw.ai/)
+- [AIClient-2-API](https://github.com/justlovemaki/AIClient-2-API)
+- [Tushare](https://tushare.pro)
+- [聚宽](https://www.joinquant.com)
+- [米筐](https://www.ricequant.com)
+- [IMF](https://www.imf.org)
+- [世界银行](https://www.worldbank.org)
+
+---
+
 **维护者**: AI Assistant  
 **License**: MIT  
-**版本**: 1.0.0
+**版本**: 1.1.0
