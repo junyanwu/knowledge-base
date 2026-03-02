@@ -21,10 +21,8 @@ updated: 2026-02-22
 | VeighNa 框架 | [veighna.md](01-quant-finance/frameworks/veighna.md) | ✅ |
 | Z-Score 策略 | [zscore-mean-reversion.md](01-quant-finance/strategies/zscore-mean-reversion.md) | ✅ |
 | 放量阴线策略 | [volume-price-patterns.md](01-quant-finance/strategies/volume-price-patterns.md) | ✅ |
-| **增强 Z-Score 策略** | [enhanced-zscore-strategy.md](01-quant-finance/strategies/enhanced-zscore-strategy.md) | ✅ 新 |
 | AkShare 数据 | [akshare.md](01-quant-finance/data-sources/akshare.md) | ✅ |
 | 回测指标 | [backtest-metrics.md](01-quant-finance/backtesting/metrics.md) | ✅ |
-| **策略优化方法** | [strategy-optimization.md](01-quant-finance/optimization/strategy-optimization.md) | ✅ 新 |
 
 ### 2️⃣ AI 工具 (AI Tools)
 
