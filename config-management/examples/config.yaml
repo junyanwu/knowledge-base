@@ -1,0 +1,79 @@
+# 配置管理系统示例配置
+
+## 应用配置示例
+
+application:
+  name: my-app
+  version: 1.0.0
+  environment: ${NODE_ENV:development}
+
+## 服务器配置
+
+server:
+  host: 0.0.0.0
+  port: 3000
+  cors:
+    enabled: true
+    origins:
+      - https://example.com
+      - https://app.example.com
+
+## 数据库配置
+
+database:
+  host: ${DB_HOST:localhost}
+  port: ${DB_PORT:5432}
+  name: ${DB_NAME:myapp}
+  username: ${DB_USER:postgres}
+  password: ${DB_PASSWORD}  # 从环境变量获取，不设默认值
+  pool:
+    min: 5
+    max: 20
+    idle_timeout: 30000
+
+## 缓存配置
+
+cache:
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:}
+    ttl: 3600
+
+## 日志配置
+
+logging:
+  level: ${LOG_LEVEL:info}
+  format: json
+  outputs:
+    - console
+    - file
+  file:
+    path: /var/log/myapp
+    max_size: 100m
+    max_files: 10
+
+## 监控配置
+
+monitoring:
+  enabled: true
+  metrics:
+    port: 9090
+    path: /metrics
+  tracing:
+    enabled: true
+    sample_rate: 0.1
+  health_check:
+    path: /health
+    interval: 30s
+
+## 外部服务配置
+
+services:
+  payment:
+    url: ${PAYMENT_SERVICE_URL}
+    api_key: ${PAYMENT_API_KEY}
+    timeout: 30000
+  notification:
+    url: ${NOTIFICATION_SERVICE_URL}
+    api_key: ${NOTIFICATION_API_KEY}

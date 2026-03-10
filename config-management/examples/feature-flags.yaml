@@ -1,0 +1,117 @@
+# 特性标志配置示例
+
+version: "1.0"
+last_updated: 2024-01-20T10:00:00Z
+
+## 特性标志定义
+
+flags:
+  ## 发布类特性标志
+  - id: new-checkout-flow
+    name: 新版结账流程
+    description: 重构后的结账体验，提升转化率
+    category: release
+    enabled: true
+    created_at: 2024-01-15T10:00:00Z
+    created_by: team-checkout@example.com
+    expires_at: 2024-03-15T00:00:00Z
+    targeting:
+      percentage: 50
+      user_groups:
+        - beta-testers
+        - internal-users
+      conditions:
+        - type: user_attribute
+          key: country
+          operator: in
+          values:
+            - US
+            - UK
+            - CA
+    variants:
+      - name: control
+        weight: 50
+        payload: {}
+      - name: treatment
+        weight: 50
+        payload:
+          new_ui: true
+    audit_log:
+      - timestamp: 2024-01-15T10:00:00Z
+        action: created
+        actor: john@example.com
+        reason: 初始创建
+      - timestamp: 2024-01-18T14:30:00Z
+        action: updated
+        actor: jane@example.com
+        changes:
+          - field: targeting.percentage
+            before: 10
+            after: 50
+        reason: 扩大灰度范围
+
+  ## 实验类特性标志
+  - id: recommendation-algorithm
+    name: 推荐算法实验
+    description: A/B测试新推荐算法效果
+    category: experiment
+    enabled: true
+    created_at: 2024-01-10T08:00:00Z
+    created_by: data-team@example.com
+    expires_at: 2024-02-10T00:00:00Z
+    targeting:
+      percentage: 20
+    variants:
+      - name: control
+        weight: 50
+        payload:
+          algorithm: collaborative-filtering
+      - name: treatment
+        weight: 50
+        payload:
+          algorithm: ml-based
+
+  ## 运维类特性标志
+  - id: recommendations-panel
+    name: 推荐面板开关
+    description: 高负载时可快速禁用推荐功能
+    category: ops
+    enabled: true
+    created_at: 2024-01-01T00:00:00Z
+    created_by: ops-team@example.com
+    # 运维开关通常不过期
+
+  ## 权限类特性标志
+  - id: premium-features
+    name: 高级功能
+    description: 仅对付费用户开放的高级功能
+    category: permission
+    enabled: true
+    created_at: 2023-06-01T00:00:00Z
+    created_by: product-team@example.com
+    # 权限类特性通常长期存在
+    targeting:
+      conditions:
+        - type: user_attribute
+          key: subscription_tier
+          operator: in
+          values:
+            - premium
+            - enterprise
+
+## 过期特性清理计划
+
+cleanup:
+  auto_archive: true
+  warning_days: 7
+  notification_channels:
+    - slack://dev-team
+    - email://tech-leads@example.com
+
+## 审计配置
+
+audit:
+  enabled: true
+  retention_days: 365
+  export_enabled: true
+  export_schedule: "0 0 * * *"  # 每天导出
